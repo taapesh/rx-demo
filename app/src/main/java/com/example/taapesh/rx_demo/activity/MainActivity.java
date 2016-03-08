@@ -5,8 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -44,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         bFetch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 GithubService service = ServiceFactory.createRetrofitService(GithubService.class, GithubService.SERVICE_ENDPOINT);
-                for(String login : Data.githubList) {
-                    service.getUser(login)
+                for(String user : Data.githubList) {
+                    service.getUser(user)
                         .subscribeOn(Schedulers.newThread())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Subscriber<Github>() {
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public final void onError(Throwable e) {
-                                Log.e("GithubDemo", e.getMessage());
+                                Log.e("Rx Java Demo", e.getMessage());
                             }
 
                             @Override

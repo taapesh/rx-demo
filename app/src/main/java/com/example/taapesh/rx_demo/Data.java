@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Data {
     public static List<String> githubList = new ArrayList<String>() {{
+        add("vinli");
+        add("uber");
         add("linkedin");
         add("tumblr");
         add("square");

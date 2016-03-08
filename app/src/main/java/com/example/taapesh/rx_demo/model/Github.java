@@ -3,7 +3,9 @@ package com.example.taapesh.rx_demo.model;
 public class Github {
     private String login;
     private String blog;
-    private int publicRepos;
+    private String location;
+    private int public_repos;
+    private String avatar_url;
 
     public String getLogin() {
         return login;
@@ -13,7 +15,15 @@ public class Github {
         return blog;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public int getPublicRepos() {
-        return publicRepos;
+        return public_repos;
+    }
+
+    public String getAvatarUrl() {
+        return avatar_url;
     }
 }
